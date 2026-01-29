@@ -1,0 +1,98 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <world name="default">
+    <scene>
+      <shadows>false</shadows>
+      <grid>true</grid>
+      <origin_visual>true</origin_visual>
+    </scene>
+
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <model name="wall_left">
+      <static>true</static>
+      <pose>0 6.0 0.5 0 0 0</pose> <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>30.0 0.5 1.0</size> </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>30.0 0.5 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="wall_right">
+      <static>true</static>
+      <pose>0 -6.0 0.5 0 0 0</pose> <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>30.0 0.5 1.0</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>30.0 0.5 1.0</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <population name="obstacle_population">
+      <model name="blue_box">
+        <static>true</static>
+        <link name="link">
+          <collision name="collision">
+            <geometry><box><size>0.5 0.5 1.0</size></box></geometry>
+          </collision>
+          <visual name="visual">
+            <geometry><box><size>0.5 0.5 1.0</size></box></geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Blue</name>
+              </script>
+            </material>
+          </visual>
+        </link>
+      </model>
+
+      <pose>0 0 0.5 0 0 0</pose>
+      <box>
+        <size>10 10 0.01</size>
+      </box>
+      <model_count>10</model_count> 
+      <distribution>
+        <type>random</type>
+      </distribution>
+    </population>
+
+  </world>
+</sdf>

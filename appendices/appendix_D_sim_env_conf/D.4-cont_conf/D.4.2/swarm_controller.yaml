@@ -1,0 +1,72 @@
+# ==========================================
+# ROBOT 1
+# ==========================================
+/robot1/controller_manager:
+  ros__parameters:
+    update_rate: 50
+    use_sim_time: true
+    diff_drive_controller:
+      type: diff_drive_controller/DiffDriveController
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+/robot1/diff_drive_controller:
+  ros__parameters:
+    # Standard names (no prefix)
+    left_wheel_names: ["front_left_wheel_joint", "back_left_wheel_joint"]
+    right_wheel_names: ["front_right_wheel_joint", "back_right_wheel_joint"]
+    wheel_separation: 0.4
+    wheel_radius: 0.05
+    use_stamped_vel: false
+
+/robot1/joint_state_broadcaster:
+  ros__parameters:
+    use_sim_time: true
+
+# ==========================================
+# ROBOT 2
+# ==========================================
+/robot2/controller_manager:
+  ros__parameters:
+    update_rate: 50
+    use_sim_time: true
+    diff_drive_controller:
+      type: diff_drive_controller/DiffDriveController
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+/robot2/diff_drive_controller:
+  ros__parameters:
+    left_wheel_names: ["front_left_wheel_joint", "back_left_wheel_joint"]
+    right_wheel_names: ["front_right_wheel_joint", "back_right_wheel_joint"]
+    wheel_separation: 0.4
+    wheel_radius: 0.05
+    use_stamped_vel: false
+
+/robot2/joint_state_broadcaster:
+  ros__parameters:
+    use_sim_time: true
+
+# ==========================================
+# ROBOT 3
+# ==========================================
+/robot3/controller_manager:
+  ros__parameters:
+    update_rate: 50
+    use_sim_time: true
+    diff_drive_controller:
+      type: diff_drive_controller/DiffDriveController
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+/robot3/diff_drive_controller:
+  ros__parameters:
+    left_wheel_names: ["front_left_wheel_joint", "back_left_wheel_joint"]
+    right_wheel_names: ["front_right_wheel_joint", "back_right_wheel_joint"]
+    wheel_separation: 0.4
+    wheel_radius: 0.05
+    use_stamped_vel: false
+
+/robot3/joint_state_broadcaster:
+  ros__parameters:
+    use_sim_time: true
